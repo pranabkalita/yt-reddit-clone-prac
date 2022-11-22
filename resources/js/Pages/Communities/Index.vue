@@ -13,83 +13,81 @@
                 <div
                     class="p-6 bg-white overflow-hidden shadow-sm sm:rounded-lg"
                 >
-                    <div class="flex justify-end">
-                        <Link
-                            :href="route('communities.create')"
-                            class="px-4 py-2 bg-blue-400 hover:bg-blue-600 rounded text-white"
-                            >New Community</Link
-                        >
-                    </div>
-
-                    <!-- https://tailwind-elements.com/docs/standard/components/tables/ -->
-                    <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <!-- https://tailwindcomponents.com/component/list-order-product -->
+                    <div class="bg-white rounded-md w-full">
+                        <div class="flex items-center justify-end">
+                            <div class="flex items-center justify-between">
+                                <div class="lg:ml-40 ml-10 space-x-8">
+                                    <Link
+                                        :href="route('communities.create')"
+                                        class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer"
+                                    >
+                                        Create
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
                             <div
-                                class="py-2 inline-block min-w-full sm:px-6 lg:px-8"
+                                class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto"
                             >
-                                <!-- Change Here -->
                                 <div
-                                    class="overflow-hidden shadow-md rounded-lg"
+                                    class="inline-block min-w-full shadow rounded-lg overflow-hidden"
                                 >
-                                    <!-- Change Here -->
-                                    <table class="w-full">
-                                        <thead
-                                            class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
-                                        >
+                                    <table class="min-w-full leading-normal">
+                                        <thead>
                                             <tr>
                                                 <th
-                                                    scope="col"
-                                                    class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                                                >
-                                                    #
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                                                 >
                                                     Name
                                                 </th>
                                                 <th
-                                                    scope="col"
-                                                    class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                                                 >
                                                     Slug
                                                 </th>
                                                 <th
-                                                    scope="col"
-                                                    class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                                                 ></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Change Here -->
                                             <tr
-                                                class="border-b bg-white"
                                                 v-for="community in communities"
-                                                :key="community.id"
+                                                :key="community.index"
                                             >
                                                 <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                                                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
                                                 >
-                                                    1
+                                                    <div
+                                                        class="flex items-center"
+                                                    >
+                                                        <p
+                                                            class="text-gray-900 whitespace-no-wrap"
+                                                        >
+                                                            {{ community.name }}
+                                                        </p>
+                                                    </div>
                                                 </td>
                                                 <td
-                                                    class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                                                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
                                                 >
-                                                    {{ community.name }}
+                                                    <p
+                                                        class="text-gray-900 whitespace-no-wrap"
+                                                    >
+                                                        {{ community.slug }}
+                                                    </p>
                                                 </td>
                                                 <td
-                                                    class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                                                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
                                                 >
-                                                    {{ community.slug }}
-                                                </td>
-                                                <th>
                                                     <a
                                                         href=""
-                                                        class="text-indigo-600 underline"
+                                                        class="text-blue-400 underline"
                                                         >Edit</a
                                                     >
-                                                </th>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

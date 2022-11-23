@@ -4,7 +4,7 @@
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create Community
+                Update Community
             </h2>
         </template>
 
@@ -51,7 +51,7 @@
                                 :class="{ 'opacity-25': form.processing }"
                                 :disabled="form.processing"
                             >
-                                Create
+                                Update
                             </PrimaryButton>
                         </div>
                     </form>
@@ -69,10 +69,14 @@ import InputLabel from "@/Components/InputLabel.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import TextInput from "@/Components/TextInput.vue";
 
+const props = defineProps({
+    community: Object,
+});
+
 const form = useForm({
-    name: "",
-    description: "",
-    slug: "",
+    name: props.community.name,
+    description: props.community.description,
+    slug: props.community.slug,
 });
 
 const submit = () => {

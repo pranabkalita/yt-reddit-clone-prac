@@ -82,10 +82,15 @@
                                                 <td
                                                     class="px-5 py-5 border-b border-gray-200 bg-white text-sm"
                                                 >
-                                                    <a
-                                                        href=""
+                                                    <Link
+                                                        :href="
+                                                            route(
+                                                                'communities.edit',
+                                                                community.id
+                                                            )
+                                                        "
                                                         class="text-blue-400 underline"
-                                                        >Edit</a
+                                                        >Edit</Link
                                                     >
                                                 </td>
                                             </tr>

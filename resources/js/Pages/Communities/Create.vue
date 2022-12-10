@@ -1,4 +1,5 @@
 <template>
+
     <Head title="Create Community" />
 
     <AuthenticatedLayout>
@@ -11,8 +12,7 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div
-                    class="p-6 bg-white overflow-hidden shadow-sm sm:rounded-lg"
-                >
+                    class="p-6 bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <form @submit.prevent="submit">
                         <div>
                             <InputLabel for="name" value="Name" />
@@ -22,12 +22,10 @@
                                 class="mt-1 block w-full"
                                 v-model="form.name"
                                 autofocus
-                                autocomplete="name"
-                            />
+                                autocomplete="name" />
                             <InputError
                                 class="mt-2"
-                                :message="form.errors.name"
-                            />
+                                :message="form.errors.name" />
                         </div>
 
                         <div class="mt-4">
@@ -37,20 +35,17 @@
                                 type="text"
                                 class="mt-1 block w-full"
                                 v-model="form.description"
-                                autocomplete="description"
-                            />
+                                autocomplete="description" />
                             <InputError
                                 class="mt-2"
-                                :message="form.errors.name"
-                            />
+                                :message="form.errors.name" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <PrimaryButton
                                 class="ml-4"
                                 :class="{ 'opacity-25': form.processing }"
-                                :disabled="form.processing"
-                            >
+                                :disabled="form.processing">
                                 Create
                             </PrimaryButton>
                         </div>

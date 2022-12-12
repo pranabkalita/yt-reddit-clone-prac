@@ -49,8 +49,8 @@
                                         </thead>
                                         <tbody>
                                             <tr
-                                                v-for="community in communities"
-                                                :key="community.index">
+                                                v-for="community in communities.data"
+                                                :key="community.id">
                                                 <td
                                                     class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                     <div
@@ -82,6 +82,10 @@
                                             </tr>
                                         </tbody>
                                     </table>
+
+                                    <div class="m-2 p-2">
+                                        <Pagination :links="communities.links" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -94,6 +98,8 @@
 
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
+import Pagination from '@/Components/Pagination.vue';
+
 import { Head, Link } from "@inertiajs/inertia-vue3";
 
 defineProps({
